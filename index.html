@@ -28,7 +28,7 @@
 
         <h1 id="userName">Nome Pessoa</h1>
 
-        <a href="https://github.com/badeca" target="_blank">
+        <a class="github" href="https://github.com/" target="_blank">
           <img src="images/github.svg" alt="ícone do github" />badeca</a
         >
 
@@ -76,6 +76,8 @@
       }
 
       userName.textContent = 'Gabriela Freitas'
+      githubLink = document.querySelector('.github')
+      githubLink.href += `${socialLinks['github']}`
 
       function changeSocialLinks() {
         for (let li of features.children) {
