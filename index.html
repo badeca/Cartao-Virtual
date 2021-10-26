@@ -25,32 +25,35 @@
             alt="Imagem pessoal"
           />
         </div>
-        <h1>Gabriela Freitas</h1>
+
+        <h1 id="userName">Nome Pessoa</h1>
 
         <a href="https://github.com/badeca" target="_blank">
           <img src="images/github.svg" alt="ícone do github" />badeca</a
         >
-        <p>
+
+        <p id="description">
           Estudante da Rocketseat, atualmente focada em javascript. Procurando
           oportunidades na área de Desenvolvimento Web.
         </p>
-        <ul>
-          <li>
+
+        <ul id="features">
+          <li class="youtube">
             <a href="https://youtube.com/" target="_blank">
               <img src="images/youtube.svg" alt="ícone do youtube" />
             </a>
           </li>
-          <li>
+          <li class="instagram">
             <a href="https:instagram.com/" target="_blank">
               <img src="images/instagram.svg" alt="ícone do instagram" />
             </a>
           </li>
-          <li>
+          <li class="facebook">
             <a href="https:facebook.com/" target="_blank">
               <img src="images/facebook.svg" alt="ícone do facebook" />
             </a>
           </li>
-          <li>
+          <li class="twitter">
             <a href="https:twitter.com/" target="_blank">
               <img
                 src="images/twitter.svg"
@@ -62,5 +65,28 @@
         </ul>
       </div>
     </main>
+
+    <script>
+      const socialLinks = {
+        github: 'badeca',
+        youtube: 'channel/UCrpBBONTl7b90thQ5toW59Q',
+        facebook: 'gabriela.bady',
+        instagram: 'badecaa',
+        twitter: 'badequinea'
+      }
+
+      userName.textContent = 'Gabriela Freitas'
+
+      function changeSocialLinks() {
+        for (let li of features.children) {
+          // console.log(li.classList)
+          const social = li.getAttribute('class')
+          li.children[0].href = `https://${social}.com/${socialLinks[social]}`
+          // console.log(li.children[0].href)
+        }
+      }
+
+      changeSocialLinks()
+    </script>
   </body>
 </html>
